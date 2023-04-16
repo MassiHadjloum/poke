@@ -1,0 +1,11 @@
+<!--button mat-button (click)="openDialog()">Launch dialog</button-->
+
+<div *ngIf="showDialog" class="dialog-container">
+  <div class="center white dialog">
+    <p>Vous êtes sûr de bien vouloir supprimer ce Pokemon?</p>
+    <div class="dialog-action">
+      <button class="btn" (click)="deletePokemon()">confirmer</button>
+      <button class="btn" (click)="cancelDelete()">Annuler</button>
+    </div>
+  </div>
+</div>

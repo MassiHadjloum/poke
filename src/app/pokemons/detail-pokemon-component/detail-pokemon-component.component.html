@@ -1,0 +1,74 @@
+<div style="margin-top: 8%;">
+  <div class="row" *ngIf="pokemon">
+    <div class="col s12 m8 offset-m2">
+      <h2 class="header center">{{pokemon.name}} </h2>
+      <div class="card horizontal hoverable">
+        <div class="card-image">
+          <img [src]="pokemon.picture">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <table class="bordered striped">
+              <tbody>
+                <tr>
+                  <td>Picture</td>
+                  <td><img src="{{pokemon.picture}}" width="60" height="60" /></td>
+                </tr>
+                <tr>
+                  <td>Nom</td>
+                  <td><strong>{{ pokemon.name }}</strong></td>
+                </tr>
+                <tr>
+                  <td>Points de vie</td>
+                  <td><strong>{{ pokemon.hp }}</strong></td>
+                </tr>
+                <tr>
+                  <td>Dégâts</td>
+                  <td><strong>{{ pokemon.cp }}</strong></td>
+                </tr>
+                <tr>
+                  <td>Types</td>
+                  <td>
+                    <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rareté</td>
+                  <td>
+                    <span  class="{{pokemon.rarete! | raretePokemon}}">{{ pokemon.rarete }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Date de création</td>
+                  <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-action red-lighten-1">
+            <a (click)="goBack()">Retour</a>
+            <a (click)="editPokemon()">Edit</a>
+            <a (click)="handleShowDialog()">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 *ngIf='!pokemon' class="center">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+        <div class="circle"></div>
+        </div><div class="gap-patch">
+        <div class="circle"></div>
+        </div><div class="circle-clipper right">
+        <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </h4>
+  <app-dialog [showDialog]="showDialog"
+  (deletePokemonEmitter)="deletePokemon($event)"
+  (cancelDeletion)="cancelDeletion($event)"></app-dialog>
+</div>
+

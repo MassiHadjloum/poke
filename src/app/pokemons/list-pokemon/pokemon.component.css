@@ -1,0 +1,38 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  width: 300px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  z-index: 99999999;
+}
+
+#search {
+  padding-left: 15px;
+  border-radius: 50px;
+  background-color: white;
+}
+.delete {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  cursor: pointer;
+  color: red;
+  display: none;
+}
+.card:hover  .delete {
+  display: block;
+}
+.select-container {
+  width: 200px;
+  position: absolute;
+  top: 10%;
+  left: 2%;
+
+}
+.select {
+  display: block;
+}

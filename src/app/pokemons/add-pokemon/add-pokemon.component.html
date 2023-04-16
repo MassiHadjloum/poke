@@ -1,0 +1,14 @@
+<div style="margin-top: 10%;">
+  <h2 class="center">Ajouter un Pokemon!</h2>
+  <div class="row" *ngIf="pokemon">
+    <div class="col s12 m8 offset-m2">
+      <h2 class="header center">{{pokemon.name}} </h2>
+      <div class="card horizontal hoverable" style="display: flex; justify-content: center;">
+        <div class="card-image">
+          <img [src]="pokemon.picture">
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-form-pokemon [isAddMode]="true" [pokemon]="pokemon"></app-form-pokemon>
+</div>
