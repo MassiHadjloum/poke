@@ -53,7 +53,10 @@ export class FormPokemonComponent implements OnInit {
   }
 
   goBack():void {
+    console.log("isAdd Mode", this.isAddMode)
+    !this.isAddMode ?
     this.router.navigate(['/pokemon', this.pokemon._id])
+    : this.router.navigate(['/pokemon/list'])
   }
 
 

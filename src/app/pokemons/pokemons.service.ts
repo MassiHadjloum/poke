@@ -97,6 +97,14 @@ export class PokemonsService {
         return pokemons!.sort((a, b) =>
           b.rarete!.length - a.rarete!.length
         )
+      case 'hp':
+        return pokemons!.sort((a, b) =>
+          b.hp - a.hp
+        )
+      case 'cp':
+        return pokemons!.sort((a, b) =>
+          b.cp! - a.cp!
+        )
       default:
         return pokemons!.sort((a, b) =>
           new Date(b.created).getTime() - new Date(a.created).getTime()

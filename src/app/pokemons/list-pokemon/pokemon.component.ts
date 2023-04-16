@@ -18,7 +18,9 @@ export class PokemonsComponent implements OnInit {
   options = [
     { value: 'name', label: 'Nom' },
     { value: 'created', label: 'Date de Création' },
-    { value: 'rarete', label: 'Rareté' }
+    { value: 'rarete', label: 'Rareté' },
+    { value: 'hp', label: 'Points de vie' },
+    { value: 'cp', label: 'Dégât' }
   ];
 
   constructor(private router: Router, private service: PokemonsService) { }
